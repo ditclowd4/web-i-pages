@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 稳定入口与页面说明</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #f5f5f3;
+      color: #1d1d1b;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2.8rem 1.2rem 4rem;
+      line-height: 1.65;
+    }
+    .page {
+      max-width: 680px;
+      width: 100%;
+    }
+    /* hero */
+    .hero {
+      margin-bottom: 4rem;
+    }
+    .hero small {
+      display: block;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      color: #8b8b86;
+      margin-bottom: 0.6rem;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 450;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .hero .sub {
+      font-size: 1rem;
+      color: #4d4d48;
+      margin-top: 0.2rem;
+      border-left: 2px solid #b7b7b0;
+      padding-left: 1rem;
+    }
+    /* 信息卡片式排版 */
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-bottom: 3.2rem;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 1.6rem 1.8rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02), 0 1px 6px rgba(0,0,0,0.02);
+      transition: box-shadow 0.2s;
+    }
+    .card:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .card h2 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.01em;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .card p, .card li {
+      font-size: 0.95rem;
+      color: #363632;
+    }
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.25rem;
+    }
+    .card li {
+      margin-bottom: 0.3rem;
+      position: relative;
+      padding-left: 1rem;
+    }
+    .card li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: #ababa3;
+    }
+    .tagline {
+      display: inline-block;
+      background: #ecece8;
+      border-radius: 20px;
+      padding: 0.2rem 0.8rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.03em;
+      color: #3f3f3b;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+    }
+    /* 自然链接段落 */
+    .link-sentence {
+      background: #f0efeb;
+      border-radius: 16px;
+      padding: 1.5rem 1.8rem;
+      margin: 2.8rem 0 2.4rem;
+    }
+    .link-sentence p {
+      font-size: 0.95rem;
+      color: #363632;
+      margin-bottom: 0.6rem;
+    }
+    .link-sentence p:last-child {
+      margin-bottom: 0;
+    }
+    .link-sentence a {
+      color: #1d1d1b;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #9a9a92;
+      transition: text-decoration-color 0.15s;
+    }
+    .link-sentence a:hover {
+      text-decoration-color: #1d1d1b;
+    }
+    /* 适合人群卡片变体 */
+    .audience-highlight {
+      background: #fafaf8;
+      border: 1px solid #e2e2db;
+    }
+    /* 提示块 */
+    .note {
+      margin-top: 2.6rem;
+      padding: 1.2rem 1.6rem;
+      background: transparent;
+      border: 1px solid #dbdbd4;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      color: #4e4e48;
+    }
+    .note strong {
+      font-weight: 500;
+      color: #1d1d1b;
+    }
+    hr {
+      border: 0;
+      border-top: 1px solid #e0dfd9;
+      margin: 2.2rem 0;
+    }
+    .faq-abbr {
+      margin-top: 1.8rem;
+    }
+    .faq-abbr details {
+      margin-bottom: 0.5rem;
+      font-size: 0.88rem;
+    }
+    .faq-abbr summary {
+      cursor: pointer;
+      font-weight: 450;
+      color: #2f2f2b;
+      padding: 0.25rem 0;
+    }
+    .faq-abbr details p {
+      color: #52524b;
+      padding-left: 0.8rem;
+      border-left: 2px solid #d8d8d0;
+      margin-top: 0.2rem;
+    }
+    /* 响应式 */
+    @media (max-width: 480px) {
+      body { padding: 1.8rem 1rem 3rem; }
+      .hero h1 { font-size: 1.9rem; }
+      .card { padding: 1.2rem 1.2rem; }
+      .link-sentence { padding: 1.2rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  
+  <!-- hero -->
+  <div class="hero">
+    <small>信息页 · 说明</small>
+    <h1>爱游戏</h1>
+    <div class="sub">一个稳定、克制的入口，<br>以及它背后的表达方式。</div>
+  </div>
+
+  <!-- 卡片式主视觉 + 用途 -->
+  <div class="card-grid">
+    <div class="card">
+      <h2>主视觉 <span class="tagline">安静界面</span></h2>
+      <p>页面上没有冗余装饰，文字与留白构成主体。窄正文宽度让视线自然聚焦于内容本身——这并非功能缺失，而是一种有意识的选择：将注意力交还给信息。</p>
+    </div>
+
+    <div class="card">
+      <h2>用途卡片</h2>
+      <p>这个页面是入口，也是说明。它回答几个基础问题：</p>
+      <ul>
+        <li>网站提供什么 —— 游戏相关内容聚合</li>
+        <li>如何抵达 —— 通过下方句子中的链接</li>
+        <li>适合谁 —— 见下一张卡片</li>
+      </ul>
+    </div>
+
+    <div class="card audience-highlight">
+      <h2>适合人群</h2>
+      <ul>
+        <li>习惯从固定入口开始浏览的玩家</li>
+        <li>对页面说明有基本期待的访客</li>
+        <li>想在安静环境中获取游戏信息的用户</li>
+        <li>偏好极简界面与清晰层级的人</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 自然链接段落 -->
+  <div class="link-sentence">
+    <p>如果你正在寻找一个可以反复使用的起点，不妨将 <a href="https://web-i-game.com.cn">爱游戏</a> 加入书签。它不会频繁改变布局与结构，每次打开都能快速找到熟悉的导航与内容。</p>
+    <p>这个站点不堆砌功能，也不制造紧迫感。页面本身就是一种稳定的传递方式——就像你此刻读到这段文字，没有弹窗，没有催促，只有一个链接。</p>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-abbr">
+    <details>
+      <summary>这个页面为什么存在？</summary>
+      <p>作为站点的介绍页，它用最小篇幅说明定位与使用方法。没有冗长介绍，只呈现必要信息。</p>
+    </details>
+    <details>
+      <summary>链接文本为什么是“爱游戏”？</summary>
+      <p>因为这是网站名称，也是它最自然的面貌——一个直呼其名的入口，不需要额外修饰。</p>
+    </details>
+  </div>
+
+  <!-- 提示 -->
+  <div class="note">
+    <strong>提示</strong> · 页面始终沿用极简风格，窄栏与卡片式内容不会随版本随意改变。如果你偏好可预见的浏览体验，这个入口或许适合你。
+  </div>
+
+  <hr>
+
+  <div style="text-align: right; font-size: 0.75rem; color: #94948c; letter-spacing: 0.02em;">
+    信息卡片式 · 稳定入口
+  </div>
+</div>
+</body>
+</html>
