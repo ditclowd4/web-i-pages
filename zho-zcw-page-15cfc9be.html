@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>足彩网 · 信息索引与资料整理</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f9fafc;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #1e293b;
+            line-height: 1.7;
+            padding: 2.5rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 680px;
+            width: 100%;
+        }
+
+        /* 轻柔分隔与留白 */
+        .hero {
+            margin: 2rem 0 1.5rem 0;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 450;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: #0f172a;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero .sub {
+            font-size: 1.05rem;
+            color: #475569;
+            border-left: 3px solid #94a3b8;
+            padding-left: 1rem;
+            margin-top: 0.3rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 450;
+            margin-top: 2.8rem;
+            margin-bottom: 0.9rem;
+            letter-spacing: -0.01em;
+            color: #0f172a;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 0.35rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 440;
+            margin-top: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #1e293b;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            color: #1e293b;
+        }
+
+        .summary-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            margin: 2rem 0 2.2rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.04);
+            border: 1px solid #edf2f7;
+        }
+
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem 1.8rem;
+            margin: 1.2rem 0 0.5rem 0;
+        }
+
+        .feature-item {
+            background: transparent;
+            padding: 0;
+        }
+
+        .feature-item span {
+            display: inline-block;
+            background: #eef2f6;
+            color: #1e293b;
+            font-weight: 470;
+            font-size: 0.85rem;
+            padding: 0.15rem 0.7rem;
+            border-radius: 30px;
+            margin-right: 0.4rem;
+        }
+
+        .feature-item p {
+            margin: 0.3rem 0 0 0;
+            font-size: 0.95rem;
+            color: #334155;
+        }
+
+        .scenario-list {
+            list-style: none;
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        .scenario-list li {
+            padding: 0.4rem 0;
+            font-size: 0.98rem;
+            color: #1e293b;
+            border-bottom: 1px dashed #e9edf2;
+        }
+
+        .scenario-list li:last-child {
+            border-bottom: none;
+        }
+
+        .scenario-list li::before {
+            content: "— ";
+            color: #94a3b8;
+        }
+
+        .note-box {
+            background: #f1f5f9;
+            border-radius: 16px;
+            padding: 1.4rem 1.8rem;
+            margin: 2.2rem 0 2rem 0;
+            border-left: 4px solid #94a3b8;
+        }
+
+        .note-box p {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .note-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-short {
+            margin: 2rem 0 1.5rem 0;
+        }
+
+        .faq-short dt {
+            font-weight: 470;
+            margin-top: 1.2rem;
+            margin-bottom: 0.3rem;
+            color: #0f172a;
+            font-size: 1rem;
+        }
+
+        .faq-short dd {
+            margin-left: 0;
+            font-size: 0.95rem;
+            color: #475569;
+            border-left: 2px solid #dde3ec;
+            padding-left: 1rem;
+        }
+
+        a {
+            color: #2563eb;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+            transition: border-color 0.15s;
+        }
+
+        a:hover {
+            border-bottom: 1px solid #2563eb;
+        }
+
+        .footer-note {
+            margin-top: 3.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.85rem;
+            color: #64748b;
+            text-align: left;
+        }
+
+        @media (max-width: 500px) {
+            body {
+                padding: 1.5rem 1rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .summary-card {
+                padding: 1.3rem 1.2rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+                margin-top: 2rem;
+            }
+        }
+
+        /* 极简点缀 */
+        .soft-dot {
+            width: 6px;
+            height: 6px;
+            background: #cbd5e1;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 0.3rem 0 0;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <div class="hero">
+        <h1>索引 · 整理 · 脉络</h1>
+        <div class="sub">从信息碎片到可查阅的线索</div>
+    </div>
+
+    <div class="summary-card">
+        <p>很多时候，我们需要的不是更多数据，而是被梳理过的结构。<a href="https://zho-zcw.com">足彩网</a> 就是这样一个节点：它不制造冗余，而是将分散的赛事资料、数据记录和背景信息汇集一处，形成可供反复查阅的条目网络。这里没有即时的喧哗，只有经过挑选和整理的静态档案——适合那些愿意先观察、再判断的人。</p>
+        <p>如果你已经厌倦了不断刷新的信息流，或许可以试试把这里当作一个安静的参考资料室。</p>
+    </div>
+
+    <h2>特点与线索</h2>
+    <div class="feature-grid">
+        <div class="feature-item">
+            <span>01</span>
+            <p>信息以条目化方式组织，每一条都带有来源痕迹和上下文，方便回溯与交叉对比。</p>
+        </div>
+        <div class="feature-item">
+            <span>02</span>
+            <p>不追求实时推送，内容更新有明确的节奏感，更像是一本持续修订的笔记。</p>
+        </div>
+        <div class="feature-item">
+            <span>03</span>
+            <p>页面布局偏向文字本身，没有复杂交互干扰，聚焦于阅读和检索。</p>
+        </div>
+        <div class="feature-item">
+            <span>04</span>
+            <p>资料涵盖多个赛季与不同赛事，留存了历史数据，便于长期观察与趋势对比。</p>
+        </div>
+    </div>
+
+    <h2>适用场景</h2>
+    <ul class="scenario-list">
+        <li>复盘某轮赛事之前，翻阅相关记录与背景说明</li>
+        <li>整理个人资料库时，将 <a href="https://zho-zcw.com">足彩网</a> 作为参考锚点之一</li>
+        <li>需要冷静分析而非即时情绪时，查阅整理后的静态内容</li>
+        <li>对某一联赛或杯赛的长期数据感兴趣，想了解过往走势</li>
+    </ul>
+
+    <h2>关于使用的一点想法</h2>
+    <p>任何资料平台都有它的边界。<a href="https://zho-zcw.com">足彩网</a> 提供的是已被梳理过的信息索引，但它无法替代你自己的判断和上下文理解。建议把它当作工作流中的一环——收集、阅读、对照，然后形成自己的结论。不要依赖单一信源，也不要忽视那些未被收录的细节。克制地使用，反而能发挥它作为工具的价值。</p>
+
+    <div class="note-box">
+        <p><strong>一个提醒：</strong> 网站内容基于公开信息和历史资料整理，不构成任何建议或导向。请保持独立思考，理性对待所有数据与记录。</p>
+    </div>
+
+    <h2>常见疑问 · 简短回答</h2>
+    <dl class="faq-short">
+        <dt>资料更新的频率如何？</dt>
+        <dd>没有固定周期，通常在赛季关键节点或资料积累到一定量时进行补充。</dd>
+        <dt>是否包含所有赛事？</dt>
+        <dd>不包含。只覆盖一部分有连续记录的赛事，侧重资料的可追溯性而非覆盖面。</dd>
+        <dt>我可以引用这些资料吗？</dt>
+        <dd>可以，但建议注明出处并自行核实。任何二次使用请遵守相关法律法规。</dd>
+        <dt>为什么页面这么简洁？</dt>
+        <dd>为了让内容本身成为焦点，减少视觉噪音。同时也方便低带宽环境下的访问。</dd>
+    </dl>
+
+    <div class="footer-note">
+        <span class="soft-dot"></span> 内容持续修订中 · 反馈与建议可通过网站内联系方式沟通
+    </div>
+
+</div>
+</body>
+</html>
